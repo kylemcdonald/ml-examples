@@ -4,3 +4,6 @@
 [submodule "karpathy/neuraltalk2"]
 	path = karpathy/neuraltalk2
 	url = https://github.com/karpathy/neuraltalk2.git
+[submodule "google/deepdream"]
+	path = google/deepdream
+	url = https://github.com/google/deepdream.git

@@ -10,3 +10,6 @@
 [submodule "jcjohnson/neural-style"]
 	path = jcjohnson/neural-style
 	url = https://github.com/jcjohnson/neural-style.git
+[submodule "apple2373/chainer_caption_generation"]
+	path = apple2373/chainer_caption_generation
+	url = https://github.com/apple2373/chainer_caption_generation.git

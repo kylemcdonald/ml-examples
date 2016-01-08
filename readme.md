@@ -6,7 +6,7 @@ To get started, first set up ml-notebook, but before calling `./run.sh` clone th
 
 ```
 $ cd ml-notebook/shared
-$ git https://github.com/kylemcdonald/ml-examples.git && cd ml-examples
+$ git clone https://github.com/kylemcdonald/ml-examples.git && cd ml-examples
 $ git submodule init # registers submodules with git
 $ git submodule update # pulls content of submodule repos
 ```

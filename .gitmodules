@@ -7,3 +7,6 @@
 [submodule "google/deepdream"]
 	path = google/deepdream
 	url = https://github.com/google/deepdream.git
+[submodule "jcjohnson/neural-style"]
+	path = jcjohnson/neural-style
+	url = https://github.com/jcjohnson/neural-style.git

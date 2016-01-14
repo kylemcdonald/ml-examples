@@ -30,10 +30,11 @@ echo "word2vec model is downloaded."
 
 INCEPTIONV3_URL="https://storage.googleapis.com/download.tensorflow.org/models/inception_dec_2015.zip"
 INCEPTIONV3_FILE="models/inceptionv3/inception.zip"
+INCEPTIONV3_DIR="models/inceptionv3/"
 INCEPTIONV3_RESULT="models/inceptionv3/tensorflow_inception_graph.pb"
 if [ ! -e $INCEPTIONV3_RESULT ]; then
 	echo "Downloading Inception-v3 (for TensorFlow)..."
 	curl -o $INCEPTIONV3_FILE $INCEPTIONV3_URL
-	unzip $INCEPTIONV3_FILE
+	unzip $INCEPTIONV3_FILE -d $INCEPTIONV3_DIR
 fi
 echo "Inception-v3 is downloaded."

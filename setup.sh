@@ -24,7 +24,7 @@ WORD2VEC_FILE="models/word2vec/GoogleNews-vectors-negative300.bin.gz"
 WORD2VEC_URL="https://googledrive.com/host/0B7XkCwpI5KDYNlNUTTlSS21pQmM"
 if [ ! -e $WORD2VEC_FILE ]; then
 	echo "Downloading word2vec model..."
-	curl -o $WORD2VEC_FILE -LK $WORD2VEC_URL
+	curl -o $WORD2VEC_FILE -L $WORD2VEC_URL
 fi
 echo "word2vec model is downloaded."
 

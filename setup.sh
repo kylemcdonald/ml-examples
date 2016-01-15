@@ -42,7 +42,7 @@ mkdir -p $INCEPTIONV3_DIR
 if [ ! -e $INCEPTIONV3_RESULT ]; then
 	echo "Downloading Inception-v3 (TensorFlow)"
 	curl -o $INCEPTIONV3_FILE $INCEPTIONV3_URL
-	unzip $INCEPTIONV3_FILE -d $INCEPTIONV3_DIR
+	unzip $INCEPTIONV3_FILE -d $INCEPTIONV3_DIR && rm $INCEPTIONV3_FILE
 fi
 echo "Downloaded: Inception-v3 (TensorFlow)"
 
@@ -50,7 +50,7 @@ NEWSGROUPS_URL="https://archive.org/download/20newsgroups.pkl/20newsgroups.pkl.g
 NEWSGROUPS_FILE="data/20newsgroups.pkl.gz"
 if [ ! -e $NEWSGROUPS_FILE ]; then
 	echo "Downloading 20 Newsgroups dataset (sklearn)"
-	curl -o $NEWSGROUPS_FILE $NEWSGROUPS_URL -L
+	curl -o $NEWSGROUPS_FILE -L $NEWSGROUPS_URL
 fi
 echo "Downloaded: 20 Newgroups dataset (sklearn)"
 
@@ -65,7 +65,7 @@ NIN_URL="https://www.dropbox.com/s/0cidxafrb2wuwxw/nin_imagenet.caffemodel?dl=1"
 NIN_FILE="$NIN_DIR/nin_imagenet.caffemodel"
 mkdir -p $NIN_DIR
 if [ ! -e $NIN_FILE ]; then
-	echo "Downloading Network In Network (for caffe)"
+	echo "Downloading Network In Network (Caffe)"
 	curl -o $NIN_FILE -L $NIN_URL
 fi
 echo "Downloaded: Network In Network (Caffe)"
@@ -75,7 +75,7 @@ VGG16_URL="http://www.robots.ox.ac.uk/\~vgg/software/very_deep/caffe/VGG_ILSVRC_
 VGG16_FILE="$VGG16_DIR/VGG_ILSVRC_16_layers.caffemodel"
 mkdir -p $VGG16_DIR
 if [ ! -e $VGG16_FILE ]; then
-	echo "Downloading VGG_ILSVRC_16_layers (for caffe)"
+	echo "Downloading VGG_ILSVRC_16_layers (Caffe)"
 	curl -o $VGG16_FILE $VGG16_URL
 fi
 echo "Downloaded: VGG 16 (Caffe)"
@@ -85,7 +85,19 @@ I2V_URL="http://illustration2vec.net/models/illust2vec_tag_ver200.caffemodel"
 I2V_FILE="$I2V_DIR/illust2vec_tag_ver200.caffemodel"
 mkdir -p $I2V_DIR
 if [ ! -e $I2V_FILE ]; then
-	echo "Downloading Illustration2Vec (for caffe)"
+	echo "Downloading Illustration2Vec (Caffe)"
 	curl -o $I2V_FILE $I2V_URL
 fi
 echo "Downloaded: Illustration2Vec (Caffe)"
+
+CHARRNN_DIR="models/char-rnn"
+CHARRNN_URL="https://github.com/kylemcdonald/char-rnn/releases/download/pretrained/char-rnn-pretrained.zip"
+CHARRNN_FILE="$CHARRNN_DIR/char-rnn-pretrained.zip"
+CHARRNN_RESULT="$CHARRNN_DIR/wiki.t7"
+mkdir -p $CHARRNN_DIR
+if [ ! -e $CHARRNN_RESULT ]; then
+	echo "Downloading char-rnn pretrained models (Torch)"
+	curl -o $CHARRNN_FILE -L $CHARRNN_URL
+	unzip $CHARRNN_FILE -d $CHARRNN_DIR && rm $CHARRNN_FILE
+fi
+echo "Downloaded: char-rnn pretrained models (Torch)"

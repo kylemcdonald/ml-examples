@@ -44,7 +44,7 @@ NEWSGROUPS_URL="https://archive.org/download/20newsgroups.pkl/20newsgroups.pkl.g
 NEWSGROUPS_FILE="data/20newsgroups.pkl.gz"
 if [ ! -e $NEWSGROUPS_FILE ]; then
 	echo "Downloading 20 Newsgroups dataset."
-	curl -o $NEWSGROUPS_FILE $NEWSGROUPS_URL
+	curl -o $NEWSGROUPS_FILE $NEWSGROUPS_URL -L
 fi
 echo "Downloaded: 20 Newgroups dataset (sklearn)"
 

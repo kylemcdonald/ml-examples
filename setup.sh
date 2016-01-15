@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "ml-examples: Checking for changes."
-git pull origin pull --recurse-submodules
+git pull origin master --recurse-submodules
 
 echo "ml-examples: Initializing submodules."
 git submodule init
@@ -37,7 +37,7 @@ echo "Downloaded: word2vec model (gensim)"
 INCEPTIONV3_DIR="models/inceptionv3"
 INCEPTIONV3_URL="https://storage.googleapis.com/download.tensorflow.org/models/inception_dec_2015.zip"
 INCEPTIONV3_FILE="$INCEPTIONV3_DIR/inception.zip"
-INCEPTIONV3_RESULT="INCEPTIONV3_DIR/tensorflow_inception_graph.pb"
+INCEPTIONV3_RESULT="$INCEPTIONV3_DIR/tensorflow_inception_graph.pb"
 mkdir -p $INCEPTIONV3_DIR
 if [ ! -e $INCEPTIONV3_RESULT ]; then
 	echo "Downloading Inception-v3 (TensorFlow)"

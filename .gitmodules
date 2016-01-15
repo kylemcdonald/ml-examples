@@ -13,3 +13,6 @@
 [submodule "apple2373/chainer_caption_generation"]
 	path = apple2373/chainer_caption_generation
 	url = https://github.com/apple2373/chainer_caption_generation.git
+[submodule "mattya/chainer-gogh"]
+	path = mattya/chainer-gogh
+	url = https://github.com/mattya/chainer-gogh.git

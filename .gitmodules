@@ -16,3 +16,6 @@
 [submodule "mattya/chainer-gogh"]
 	path = mattya/chainer-gogh
 	url = https://github.com/mattya/chainer-gogh.git
+[submodule "yusuketomoto/chainer-char-rnn"]
+	path = yusuketomoto/chainer-char-rnn
+	url = https://github.com/yusuketomoto/chainer-char-rnn.git

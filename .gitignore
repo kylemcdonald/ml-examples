@@ -1,4 +1,5 @@
 .*
 *.pyc
 models
+char_rnn_emoji
 data

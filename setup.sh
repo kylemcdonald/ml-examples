@@ -22,10 +22,10 @@ if [ ! -e $BVLC_GOOGLENET_FILE ]; then
 fi
 echo "Downloaded: bvlc_googlenet (Caffe)"
 
-# this link will stop working on august 31, 2016
+# this link is not guaranteed to work indefinitely
 WORD2VEC_DIR="models/word2vec"
 WORD2VEC_FILE="$WORD2VEC_DIR/GoogleNews-vectors-negative300.bin.gz"
-WORD2VEC_URL="https://googledrive.com/host/0B7XkCwpI5KDYNlNUTTlSS21pQmM"
+WORD2VEC_URL="https://s3.amazonaws.com/mordecai-geo/GoogleNews-vectors-negative300.bin.gz"
 mkdir -p $WORD2VEC_DIR
 if [ ! -e $WORD2VEC_FILE ]; then
 	echo "Downloading word2vec model (gensim)"
@@ -71,7 +71,7 @@ fi
 echo "Downloaded: Network In Network (Caffe)"
 
 VGG16_DIR="models/vgg"
-VGG16_URL="http://www.robots.ox.ac.uk/\~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel"
+VGG16_URL="http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel"
 VGG16_FILE="$VGG16_DIR/VGG_ILSVRC_16_layers.caffemodel"
 mkdir -p $VGG16_DIR
 if [ ! -e $VGG16_FILE ]; then
@@ -101,3 +101,23 @@ if [ ! -e $CHARRNN_RESULT ]; then
 	unzip $CHARRNN_FILE -d $CHARRNN_DIR && rm $CHARRNN_FILE
 fi
 echo "Downloaded: char-rnn pretrained models (Torch)"
+
+DLIB_DIR="models/dlib"
+DLIB_LANDMARKS_URL="http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2"
+DLIB_LANDMARKS_FILE="$DLIB_DIR/landmarks.dat.bz2"
+DLIB_LANDMARKS_RESULT="$DLIB_DIR/landmarks.dat"
+DLIB_RECOGNITION_URL="http://dlib.net/files/dlib_face_recognition_resnet_model_v1.dat.bz2"
+DLIB_RECOGNITION_FILE="$DLIB_DIR/recognition.dat.bz2"
+DLIB_RECOGNITION_RESULT="$DLIB_DIR/recognition.dat"
+mkdir -p $DLIB_DIR
+if [ ! -e $DLIB_LANDMARKS_RESULT ]; then
+	echo "Downloading dlib face landmarks"
+	curl -o $DLIB_LANDMARKS_FILE -L $DLIB_LANDMARKS_URL
+	bunzip2 $DLIB_LANDMARKS_FILE
+fi
+if [ ! -e $DLIB_RECOGNITION_RESULT ]; then
+	echo "Downloading dlib face recognition model"
+	curl -o $DLIB_RECOGNITION_FILE -L $DLIB_RECOGNITION_URL
+	bunzip2 $DLIB_RECOGNITION_FILE
+fi
+echo "Downloaded: dlib face landmarks and face recognition model"

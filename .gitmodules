@@ -4,18 +4,9 @@
 [submodule "karpathy/neuraltalk2"]
 	path = karpathy/neuraltalk2
 	url = https://github.com/karpathy/neuraltalk2.git
-[submodule "google/deepdream"]
-	path = google/deepdream
-	url = https://github.com/google/deepdream.git
 [submodule "jcjohnson/neural-style"]
 	path = jcjohnson/neural-style
 	url = https://github.com/jcjohnson/neural-style.git
-[submodule "apple2373/chainer_caption_generation"]
-	path = apple2373/chainer_caption_generation
-	url = https://github.com/apple2373/chainer_caption_generation.git
-[submodule "mattya/chainer-gogh"]
-	path = mattya/chainer-gogh
-	url = https://github.com/mattya/chainer-gogh.git
-[submodule "yusuketomoto/chainer-char-rnn"]
-	path = yusuketomoto/chainer-char-rnn
-	url = https://github.com/yusuketomoto/chainer-char-rnn.git
+[submodule "jcjohnson/torch-rnn"]
+	path = jcjohnson/torch-rnn
+	url = https://github.com/jcjohnson/torch-rnn.git
